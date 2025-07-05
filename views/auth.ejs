@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portavia | Auth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative flex items-center justify-center min-h-screen">
+
+  <!-- ✅ Responsive Background Image -->
+  <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center z-[-1]" style="background-image: url('/images/image1.jpg');"></div>
+
+  <% const isLogin = form === 'login'; %>
+
+  <div class="bg-transparent bg-opacity-90 rounded-xl shadow-xl p-8 w-full max-w-md mx-4 border-[1px] border-black">
+    
+    <!-- Toggle Buttons -->
+    <div class="flex justify-center mb-6 space-x-4">
+      <a href="/users/auth?form=login"
+         class="px-4 py-2 rounded-full font-medium transition
+         <%= isLogin ? 'bg-black text-white' : 'bg-gray-200 text-black hover:bg-gray-300' %>">
+         Login
+      </a>
+      <a href="/users/auth?form=register"
+         class="px-4 py-2 rounded-full font-medium transition
+         <%= !isLogin ? 'bg-black text-white' : 'bg-gray-200 text-black hover:bg-gray-300' %>">
+         Register
+      </a>
+    </div>
+
+    <!-- Form Header -->
+    <h2 class="text-2xl font-semibold text-center mb-4">
+      <%= isLogin ? "Login to Portavia" : "Create your Portavia Account" %>
+    </h2>
+
+    <!-- Error Display -->
+    <% if (error && error.length > 0) { %>
+      <div class="bg-red-100 text-red-700 text-sm text-center px-3 py-2 rounded mb-3">
+        <%= error %>
+      </div>
+    <% } %>
+
+    <!--  Form -->
+    <% if (isLogin) { %>
+      <form method="POST" action="/users/login" class="space-y-4">
+        <input type="email" name="email" required placeholder="jane@example.com"
+               class="w-full px-4 py-2 border rounded bg-gray-100" />
+        <input type="password" name="password" required placeholder="••••••••"
+               class="w-full px-4 py-2 border rounded bg-gray-100" />
+        <button type="submit"
+                class="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+          Login
+        </button>
+      </form>
+    <% } else { %>
+      <form method="POST" action="/users/register" class="space-y-4">
+        <input type="text" name="fullname" required placeholder="Full Name"
+               class="w-full px-4 py-2 border rounded bg-gray-100" />
+        <input type="email" name="email" required placeholder="Email"
+               class="w-full px-4 py-2 border rounded bg-gray-100" />
+        <input type="password" name="password" required placeholder="Password"
+               class="w-full px-4 py-2 border rounded bg-gray-100" />
+        <button type="submit"
+                class="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition">
+          Register
+        </button>
+      </form>
+    <% } %>
+  </div>
+</body>
+</html>

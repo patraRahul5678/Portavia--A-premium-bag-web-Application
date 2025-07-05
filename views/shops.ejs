@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Portavia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="flex flex-col sm:flex-row justify-between items-center px-6 py-4 bg-white shadow-md">
+        <h3 class="text-2xl font-bold text-blue-600 mb-2 sm:mb-0">Portavia</h3>
+        <% var loggedin=typeof loggedin !=="undefined" ? loggedin : true %>
+            <% if (loggedin) { %>
+                <div class="flex flex-wrap gap-4 text-lg">
+                    <a href="/users/shop" class="hover:text-blue-600">Shop</a>
+                    <a href="/cart" class="hover:text-blue-600">Cart</a>
+                    <a href="/profile" class="hover:text-blue-600">My Account</a>
+                    <a href="/users/logout" class="text-red-600 hover:underline">Logout</a>
+                </div>
+                <% } %>
+    </nav>
+
+    <!-- Success Alert -->
+    <% if (success.length> 0) { %>
+        <div
+            class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded shadow-md z-50">
+            <%= success %>
+        </div>
+        <% } %>
+
+            <!-- Main Content -->
+            <div class="flex flex-col lg:flex-row gap-6 px-4 lg:px-16 py-10">
+
+                <!-- Sidebar -->
+                <aside class="w-full lg:w-1/4 space-y-10">
+                    <!-- Sort -->
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">Sort by</h3>
+                        <form action="/shop">
+                            <select class="border border-gray-300 px-3 py-2 w-full rounded" name="sortby">
+                                <option value="popular">Popular</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">Categories</h3>
+                        <a class="block hover:underline" href="#">New Collection</a>
+                        <a class="block hover:underline" href="#">All Products</a>
+                        <a class="block hover:underline" href="#">Discounted Products</a>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">Filters</h3>
+                        <a class="block hover:underline" href="#">Availability</a>
+                        <a class="block hover:underline" href="#">Discount</a>
+                    </div>
+                </aside>
+
+                <!-- Product Grid -->
+                <main class="w-full lg:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                        <% products.forEach(product=> { %>
+                            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                                <!-- Product Image -->
+                                <div class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]">
+                                    <img class="h-44 object-contain"
+                                        src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                                </div>
+
+                                <!-- Product Info -->
+                                <div
+                                    class="flex justify-between items-center px-4 py-3 bg-[<%= product.panelcolor %>] text-[<%= product.textcolor %>]">
+                                    <div>
+                                        <h3 class="font-semibold text-lg">
+                                            <%= product.name %>
+                                        </h3>
+                                        <h4>₹ <%= product.price %>
+                                        </h4>
+                                    </div>
+                                    <a href="/addtocart/<%= product._id %>"
+                                        class="w-8 h-8 flex items-center justify-center rounded-full bg-white hover:scale-110 transition">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
+                                            height="20" fill="none">
+                                            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+                </main>
+            </div>
+</body>
+
+</html>
