@@ -3,7 +3,6 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const userModel = require("../models/user-model");
 const productModel = require("../models/product-model");
-// const isLoggedin = require("../middlewares/isLoggedin")
 
 async function isLoggedin(req, res, next) {
     if (!req.cookies.token) {
@@ -36,30 +35,6 @@ router.get("/users/auth",(req,res)=>{
     const form = req.query.form || 'login';
     res.render("auth", { error, loggedin: false ,form});
 })
-
-// router.get("/shop", isLoggedin, (req, res) => {
-//     res.render("shop");
-// })
-
-// router.get("/addtocart/:id", isLoggedin, async (req, res) => {
-//     let user = await userModel.findOne({ email: req.user.email })
-//     // if (user.cart === req.params.id) {
-//     //     let product = await productModel.findOne({ _id: req.params.id })
-//     //     product.quantity += 1;
-//     // }
-//     user.cart.forEach(async id => {
-//         if (id === req.params.id) {
-//             let product = await productModel.findOne({ _id: req.params.id })
-//             product.quantity += 1;
-//         }
-//         else {
-//             user.cart.push(req.params.id);
-//             await user.save()
-//         }
-//     })
-//     req.flash("success", "Product added to cart successfully");
-//     res.redirect("/users/shop")
-// })
 
 
 router.get("/addtocart/:id", isLoggedin, async (req, res) => {

@@ -1,16 +1,10 @@
 const express = require("express")
 const router = express.Router()
-//const isLoggedin = require("../middlewares/isLoggedin")
 const userModel = require("../models/user-model")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-// const { generateToken } = require("../utils/generateToken")
 const productModel = require("../models/product-model")
-// const jwt = require("jsonwebtoken");
 
-
-
-// const { registerUser, loginUser, logout } = require("../controllers/authController")
 
 async function isLoggedin(req, res, next) {
     if (!req.cookies.token) {

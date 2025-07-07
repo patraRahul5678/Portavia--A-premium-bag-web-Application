@@ -26,20 +26,18 @@
 
 <body>
 
-    <div class="['helvetica_now_display']">
-        <nav class="flex justify-between items-center p-5">
-            <h3 class="text-3xl font-bold text-blue-600">Portavia</h3>
-            <% var loggedin=typeof loggedin !=="undefined" ? loggedin : true %>
-                <% if (loggedin){%>
-                    <div class="flex gap-4 text-xl">
-                        <a href="/users/shop">Shop</a>
-                        <a href="/cart">Cart</a>
-                        <a href="/profile">My Account</a>
-                        <a class="text-red-600" href="/users/logout">Logout</a>
-                    </div>
-                    <%}%>
-        </nav>
-    </div>
+   <nav class="flex flex-col sm:flex-row justify-between items-center px-6 py-4 bg-white shadow-md">
+        <h3 class="text-2xl font-bold text-blue-600 mb-2 sm:mb-0">Portavia</h3>
+        <% var loggedin=typeof loggedin !=="undefined" ? loggedin : true %>
+            <% if (loggedin) { %>
+                <div class="flex flex-wrap gap-4 text-lg">
+                    <a href="/users/shop" class="hover:text-blue-600">Shop</a>
+                    <a href="/cart" class="hover:text-blue-600">Cart</a>
+                    <a href="/profile" class="hover:text-blue-600">My Account</a>
+                    <a href="/users/logout" class="text-red-600 hover:underline">Logout</a>
+                </div>
+                <% } %>
+    </nav>
 
 
     <div
