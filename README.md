@@ -1,8 +1,8 @@
-### 👜 Portavia — Premium Bag E-Commerce Web App
+<h1 align="centre">👜 Portavia-A Premium Bag Web Application 👜</h1>
 Portavia is a full-stack eCommerce web application focused on selling premium bags. Built using Node.js, Express.js, MongoDB, EJS, and Tailwind CSS, the app offers a complete shopping experience with user authentication, cart functionality, and an admin dashboard.
 
 
-🚀 Features
+#🚀 Features
 -🛍️ Product Listing & Filtering
 
 -➕ Add to Cart Functionality
