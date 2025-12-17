@@ -3,6 +3,7 @@ Portavia is a full-stack eCommerce web application focused on selling premium ba
 
 
 
+
 <h2>🚀 Features </h2>
 -🛍️ Product Listing & Filtering
 
@@ -18,7 +19,8 @@ Portavia is a full-stack eCommerce web application focused on selling premium ba
 
 -✨ Clean UI using Tailwind CSS
 
-🛠️ Tech Stack
+
+<h2>🛠️ Tech Stack</h2>
 -Frontend: EJS, Tailwind CSS
 
 -Backend: Node.js, Express.js
@@ -32,7 +34,7 @@ Portavia is a full-stack eCommerce web application focused on selling premium ba
 -Other Tools: Git, GitHub
 
 
-🔧 Setup Instructions
+<h2>🔧 Setup Instructions</h2>
 
 1.Clone the repository
 ```
