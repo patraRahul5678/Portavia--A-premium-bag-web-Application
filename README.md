@@ -1,6 +1,6 @@
 <h1 align="center">👜 Portavia-A Premium Bag Web Application 👜</h1>
 Portavia is a full-stack eCommerce web application focused on selling premium bags.  
-Built using **Node.js, Express.js, MongoDB, EJS, Tailwind CSS**, and **Stripe**, it provides a secure and seamless shopping experience.
+Built using Node.js, Express.js, MongoDB, EJS, Tailwind CSS, and Stripe, it provides a secure and seamless shopping experience.
 
 
 
@@ -20,6 +20,7 @@ Built using **Node.js, Express.js, MongoDB, EJS, Tailwind CSS**, and **Stripe**,
 - 🎨 Clean & Premium UI using Tailwind CSS  
 
 <h2>🛠️ Tech Stack</h2>
+
 **Frontend**
 - EJS
 - Tailwind CSS
