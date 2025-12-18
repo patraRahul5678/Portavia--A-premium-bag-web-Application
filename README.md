@@ -4,7 +4,7 @@ Portavia is a full-stack eCommerce web application focused on selling premium ba
 
 ## 🚀 Live Demo
 
-👉 [Visit Portavia Live]([https://codelens-7.onrender.com/](https://portavia-5.onrender.com))
+👉 [Visit Portavia Live](https://portavia-5.onrender.com)
 
 
 <h2>🚀 Features </h2>
