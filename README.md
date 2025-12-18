@@ -1,5 +1,7 @@
 <h1 align="center">👜 Portavia-A Premium Bag Web Application 👜</h1>
-Portavia is a full-stack eCommerce web application focused on selling premium bags. Built using Node.js, Express.js, MongoDB, EJS, and Tailwind CSS, the app offers a complete shopping experience with user authentication, cart functionality, and an admin dashboard.
+Portavia is a full-stack eCommerce web application focused on selling premium bags.  
+Built using **Node.js, Express.js, MongoDB, EJS, Tailwind CSS**, and **Stripe**, it provides a secure and seamless shopping experience.
+
 
 
 ## 🚀 Live Demo
@@ -8,33 +10,38 @@ Portavia is a full-stack eCommerce web application focused on selling premium ba
 
 
 <h2>🚀 Features </h2>
--🛍️ Product Listing & Filtering
-
--➕ Add to Cart Functionality
-
--🔐 User Authentication (Login / Register)
-
--🧑‍💼 Admin Dashboard
-
--📱 Fully Responsive Design
-
--💾 MongoDB Database Integration
-
--✨ Clean UI using Tailwind CSS
-
+- 🛍️ Product Listing & Filtering  
+- ➕ Add to Cart Functionality  
+- 🔐 User Authentication (Login / Register)  
+- 🧑‍💼 Admin Dashboard  
+- 💳 Secure Stripe Payment Integration  
+- 📱 Fully Responsive Design  
+- 💾 MongoDB Database Integration  
+- 🎨 Clean & Premium UI using Tailwind CSS  
 
 <h2>🛠️ Tech Stack</h2>
--Frontend: EJS, Tailwind CSS
+**Frontend**
+- EJS
+- Tailwind CSS
 
--Backend: Node.js, Express.js
+**Backend**
+- Node.js
+- Express.js
 
--Database: MongoDB + Mongoose
+**Database**
+- MongoDB
+- Mongoose
 
--Authentication: Sessions or JWT
+**Authentication**
+- JWT / Sessions
 
--Templating: EJS
+**Payments**
+- Stripe Checkout
 
--Other Tools: Git, GitHub
+**Other Tools**
+- Git
+- GitHub
+- Render
 
 
 <h2>🔧 Setup Instructions</h2>
